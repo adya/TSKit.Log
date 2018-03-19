@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		006182BD206045C90079DD8C /* TSKit_Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 006182BC206045C90079DD8C /* TSKit_Core.framework */; };
+		006182C1206045DE0079DD8C /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 006182BF206045DE0079DD8C /* Cartfile */; };
 		00C2C4551FE5C43C00721731 /* TSKit_Log.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C2C44B1FE5C43C00721731 /* TSKit_Log.framework */; };
 		00C2C45A1FE5C43C00721731 /* TSKit_LogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C2C4591FE5C43C00721731 /* TSKit_LogTests.swift */; };
 		00C2C45C1FE5C43C00721731 /* TSKit_Log.h in Headers */ = {isa = PBXBuildFile; fileRef = 00C2C44E1FE5C43C00721731 /* TSKit_Log.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -15,7 +17,6 @@
 		00C2C4EE1FE5C52E00721731 /* DefaultLoggable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C2C4E91FE5C52E00721731 /* DefaultLoggable.swift */; };
 		00C2C4EF1FE5C52E00721731 /* FileLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C2C4EA1FE5C52E00721731 /* FileLog.swift */; };
 		00C2C4F01FE5C52E00721731 /* Loggable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C2C4EB1FE5C52E00721731 /* Loggable.swift */; };
-		00CCB2871FE6BD9200F1E75C /* TSKit_Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00CCB2881FE6BD9200F1E75C /* TSKit_Core.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +30,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		006182BC206045C90079DD8C /* TSKit_Core.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TSKit_Core.framework; path = Carthage/Build/iOS/TSKit_Core.framework; sourceTree = "<group>"; };
+		006182BF206045DE0079DD8C /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = SOURCE_ROOT; };
 		00C2C44B1FE5C43C00721731 /* TSKit_Log.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TSKit_Log.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		00C2C44E1FE5C43C00721731 /* TSKit_Log.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TSKit_Log.h; sourceTree = "<group>"; };
 		00C2C44F1FE5C43C00721731 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -40,7 +43,6 @@
 		00C2C4E91FE5C52E00721731 /* DefaultLoggable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultLoggable.swift; sourceTree = "<group>"; };
 		00C2C4EA1FE5C52E00721731 /* FileLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileLog.swift; sourceTree = "<group>"; };
 		00C2C4EB1FE5C52E00721731 /* Loggable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Loggable.swift; sourceTree = "<group>"; };
-		00CCB2881FE6BD9200F1E75C /* TSKit_Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TSKit_Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,7 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00CCB2871FE6BD9200F1E75C /* TSKit_Core.framework in Frameworks */,
+				006182BD206045C90079DD8C /* TSKit_Core.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				00C2C4F11FE5C53700721731 /* Sources */,
+				006182BF206045DE0079DD8C /* Cartfile */,
 				00C2C44E1FE5C43C00721731 /* TSKit_Log.h */,
 				00C2C44F1FE5C43C00721731 /* Info.plist */,
 			);
@@ -116,7 +119,7 @@
 		00CCB2861FE6BD9200F1E75C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				00CCB2881FE6BD9200F1E75C /* TSKit_Core.framework */,
+				006182BC206045C90079DD8C /* TSKit_Core.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -215,6 +218,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				006182C1206045DE0079DD8C /* Cartfile in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
