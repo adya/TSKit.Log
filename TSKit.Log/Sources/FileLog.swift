@@ -3,7 +3,7 @@ import TSKit_Core
 
 class FileLog : PrintLog {
 
-    @discardableResult override func log(_ message: @escaping @autoclosure () -> String?, level: LogLevel, functionName: String, fileName: String, lineNumber: Int) -> String? {
+    @discardableResult override func log(_ message: String?, level: LogLevel, functionName: String, fileName: String, lineNumber: Int) -> String? {
         let msg = super.log(message, level: level, functionName: functionName, fileName: fileName, lineNumber: lineNumber)
         if let msg = msg, !msg.isEmpty, level.rawValue >= fileLevel.rawValue {
             writeToFile(message: "\n\(msg)")

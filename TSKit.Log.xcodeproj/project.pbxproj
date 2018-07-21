@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		006182BD206045C90079DD8C /* TSKit_Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 006182BC206045C90079DD8C /* TSKit_Core.framework */; };
-		006182C1206045DE0079DD8C /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 006182BF206045DE0079DD8C /* Cartfile */; };
 		00C2C4551FE5C43C00721731 /* TSKit_Log.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C2C44B1FE5C43C00721731 /* TSKit_Log.framework */; };
 		00C2C45A1FE5C43C00721731 /* TSKit_LogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C2C4591FE5C43C00721731 /* TSKit_LogTests.swift */; };
 		00C2C45C1FE5C43C00721731 /* TSKit_Log.h in Headers */ = {isa = PBXBuildFile; fileRef = 00C2C44E1FE5C43C00721731 /* TSKit_Log.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -218,7 +217,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				006182C1206045DE0079DD8C /* Cartfile in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
