@@ -13,7 +13,6 @@
 		00C2C45C1FE5C43C00721731 /* TSKit_Log.h in Headers */ = {isa = PBXBuildFile; fileRef = 00C2C44E1FE5C43C00721731 /* TSKit_Log.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		00C2C4EC1FE5C52E00721731 /* AnyLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C2C4E71FE5C52E00721731 /* AnyLog.swift */; };
 		00C2C4ED1FE5C52E00721731 /* PrintLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C2C4E81FE5C52E00721731 /* PrintLog.swift */; };
-		00C2C4EE1FE5C52E00721731 /* DefaultLoggable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C2C4E91FE5C52E00721731 /* DefaultLoggable.swift */; };
 		00C2C4EF1FE5C52E00721731 /* FileLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C2C4EA1FE5C52E00721731 /* FileLog.swift */; };
 		00C2C4F01FE5C52E00721731 /* Loggable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C2C4EB1FE5C52E00721731 /* Loggable.swift */; };
 /* End PBXBuildFile section */
@@ -39,7 +38,6 @@
 		00C2C45B1FE5C43C00721731 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00C2C4E71FE5C52E00721731 /* AnyLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnyLog.swift; sourceTree = "<group>"; };
 		00C2C4E81FE5C52E00721731 /* PrintLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrintLog.swift; sourceTree = "<group>"; };
-		00C2C4E91FE5C52E00721731 /* DefaultLoggable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultLoggable.swift; sourceTree = "<group>"; };
 		00C2C4EA1FE5C52E00721731 /* FileLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileLog.swift; sourceTree = "<group>"; };
 		00C2C4EB1FE5C52E00721731 /* Loggable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Loggable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -107,7 +105,6 @@
 			isa = PBXGroup;
 			children = (
 				00C2C4E71FE5C52E00721731 /* AnyLog.swift */,
-				00C2C4E91FE5C52E00721731 /* DefaultLoggable.swift */,
 				00C2C4EA1FE5C52E00721731 /* FileLog.swift */,
 				00C2C4EB1FE5C52E00721731 /* Loggable.swift */,
 				00C2C4E81FE5C52E00721731 /* PrintLog.swift */,
@@ -185,7 +182,7 @@
 				TargetAttributes = {
 					00C2C44A1FE5C43C00721731 = {
 						CreatedOnToolsVersion = 9.2;
-						LastSwiftMigration = 0920;
+						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 					};
 					00C2C4531FE5C43C00721731 = {
@@ -238,7 +235,6 @@
 				00C2C4EC1FE5C52E00721731 /* AnyLog.swift in Sources */,
 				00C2C4EF1FE5C52E00721731 /* FileLog.swift in Sources */,
 				00C2C4F01FE5C52E00721731 /* Loggable.swift in Sources */,
-				00C2C4EE1FE5C52E00721731 /* DefaultLoggable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -394,7 +390,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = NO;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -418,7 +414,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.glar.tskit.log;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = NO;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

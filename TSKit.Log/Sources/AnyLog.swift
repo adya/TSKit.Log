@@ -46,7 +46,7 @@ public protocol AnyLog {
 }
 
 /// MARK: Default handy log methods.
-extension AnyLog {
+public extension AnyLog {
     
     func verbose(_ message : String?, functionName : String = #function, fileName : String = #file, lineNumber : Int = #line) {
         self.verbose(message, functionName: functionName, fileName: fileName, lineNumber: lineNumber)

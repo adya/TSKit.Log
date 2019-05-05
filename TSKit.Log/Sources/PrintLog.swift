@@ -65,37 +65,37 @@ public class PrintLog: AnyLog {
         return nil
     }
     
-    func debug(_ message: String?, functionName: String, fileName: String, lineNumber: Int) {
+    public func debug(_ message: String?, functionName: String, fileName: String, lineNumber: Int) {
         PrintLog.logQueue.async {
             self.log(message, level: .debug, functionName: functionName, fileName: fileName, lineNumber: lineNumber)
         }
     }
-    
-    func verbose(_ message: String?, functionName: String, fileName: String, lineNumber: Int) {
+
+    public func verbose(_ message: String?, functionName: String, fileName: String, lineNumber: Int) {
         PrintLog.logQueue.async {
             self.log(message, level: .verbose, functionName: functionName, fileName: fileName, lineNumber: lineNumber)
         }
     }
-    
-    func info(_ message: String?, functionName: String, fileName: String, lineNumber: Int) {
+
+    public func info(_ message: String?, functionName: String, fileName: String, lineNumber: Int) {
         PrintLog.logQueue.async {
             self.log(message, level: .info, functionName: functionName, fileName: fileName, lineNumber: lineNumber)
         }
     }
-    
-    func warning(_ message: String?, functionName: String, fileName: String, lineNumber: Int) {
+
+    public func warning(_ message: String?, functionName: String, fileName: String, lineNumber: Int) {
         PrintLog.logQueue.async {
             self.log(message, level: .warning, functionName: functionName, fileName: fileName, lineNumber: lineNumber)
         }
     }
-    
-    func error(_ message: String?, functionName: String, fileName: String, lineNumber: Int) {
+
+    public func error(_ message: String?, functionName: String, fileName: String, lineNumber: Int) {
         PrintLog.logQueue.async {
             self.log(message, level: .error, functionName: functionName, fileName: fileName, lineNumber: lineNumber)
         }
     }
-    
-    func severe(_ message: String?, functionName: String, fileName: String, lineNumber: Int) {
+
+    public func severe(_ message: String?, functionName: String, fileName: String, lineNumber: Int) {
         PrintLog.logQueue.async {
             self.log(message, level: .severe, functionName: functionName, fileName: fileName, lineNumber: lineNumber)
         }
