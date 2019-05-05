@@ -1,3 +1,8 @@
+/// - Since: 01/20/2018
+/// - Author: Arkadii Hlushchevskyi
+/// - Copyright: © 2018. Arkadii Hlushchevskyi.
+/// - Seealso: https://github.com/adya/TSKit.Log/blob/master/LICENSE.md
+
 /// Logger providing multiple levels of logging.
 public protocol AnyLog {
     
