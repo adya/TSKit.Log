@@ -6,17 +6,7 @@
 import Foundation
 
 /// Simple `AnyLog` implementation using plain `print()` function.
-public class PrintLog: AnyLog {
-    
-    /// A level of logging.
-    enum LogLevel: Int {
-        case debug = 0
-        case verbose = 1
-        case info = 2
-        case warning = 3
-        case error = 4
-        case severe = 5
-    }
+public class PrintLog: AnyLogger {
     
     /// `Logs` owner type. Used to determine callee's type.
     fileprivate var owner: Any.Type
