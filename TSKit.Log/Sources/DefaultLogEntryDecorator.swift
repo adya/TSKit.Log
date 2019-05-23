@@ -1,8 +1,8 @@
 public class DefaultLogEntryDecorator: AnyLogEntryDecorator {
 
-    public init()
+    public init() {}
 
-    func decorate(_ entry: LogEntry) -> String {
+    public func decorate(_ entry: LogEntry) -> String {
         let date = String(from: entry.timestamp, formattedWith: "HH:mm:ss.SSSSSS")!
         let tag = entry.tag.flatMap { " [\($0)]" }
         let prefix = ["\(date)",

@@ -1,4 +1,4 @@
-struct LogEntry {
+public struct LogEntry {
 
     let message: String
 
