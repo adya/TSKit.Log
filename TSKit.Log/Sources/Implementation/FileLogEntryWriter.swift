@@ -1,3 +1,5 @@
+import TSKit_Core
+
 public class FileLogEntryWriter: AnyLogEntryWriter {
 
     public var interceptors: [AnyLogInterceptor]
@@ -18,8 +20,11 @@ public class FileLogEntryWriter: AnyLogEntryWriter {
             try? FileManager.default.createDirectory(at: logFile.deletingLastPathComponent(),
                                                      withIntermediateDirectories: true,
                                                      attributes: nil)
-            FileManager.default.createFile(atPath: logFile.standardizedFileURL.absoluteString, contents: nil, attributes: nil)
+            if !FileManager.default.fileExists(atPath: logFile.path) {
+                FileManager.default.createFile(atPath: logFile.path, contents: nil)
+            }
             fileHandle = try FileHandle(forWritingTo: logFile)
+            fileHandle.seekToEndOfFile()
         } catch {
             print("Failed to open file handler with error: \(error)")
             return nil

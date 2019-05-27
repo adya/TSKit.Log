@@ -1,16 +1,16 @@
 public struct LogEntry {
 
-    let message: String
+    public let message: String
 
-    let timestamp: Date
+    public let timestamp: Date
 
-    let tag: String?
+    public let tag: String?
 
-    let level: LogLevel
+    public let level: LogLevel
 
-    let functionName: String
+    public let functionName: String
 
-    let fileName: String
+    public let fileName: String
 
-    let lineNumber: Int
+    public let lineNumber: Int
 }
