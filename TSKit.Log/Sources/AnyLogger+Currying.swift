@@ -13,7 +13,7 @@ public extension AnyLogger {
     ///                  When passing `String` it will be used directly, otherwise `tag` will be represented as type
     ///                  of passed object.
     /// - Returns partially applied function expecting `message` to be logged.
-    func debug(tag: Any,
+    func debug(tag: Any?,
                functionName: String = #function,
                fileName: String = #file,
                lineNumber: Int = #line) -> (String?) -> Void {
@@ -28,7 +28,7 @@ public extension AnyLogger {
     ///                  When passing `String` it will be used directly, otherwise `tag` will be represented as type
     ///                  of passed object.
     /// - Returns partially applied function expecting `message` to be logged.
-    func verbose(tag: Any,
+    func verbose(tag: Any?,
                  functionName: String = #function,
                  fileName: String = #file,
                  lineNumber: Int = #line) -> (String?) -> Void {
@@ -43,7 +43,7 @@ public extension AnyLogger {
     ///                  When passing `String` it will be used directly, otherwise `tag` will be represented as type
     ///                  of passed object.
     /// - Returns partially applied function expecting `message` to be logged.
-    func info(tag: Any,
+    func info(tag: Any?,
               functionName: String = #function,
               fileName: String = #file,
               lineNumber: Int = #line) -> (String?) -> Void {
@@ -59,7 +59,7 @@ public extension AnyLogger {
     ///                  When passing `String` it will be used directly, otherwise `tag` will be represented as type
     ///                  of passed object.
     /// - Returns partially applied function expecting `message` to be logged.
-    func warning(tag: Any,
+    func warning(tag: Any?,
                  functionName: String = #function,
                  fileName: String = #file,
                  lineNumber: Int = #line) -> (String?) -> Void {
@@ -74,7 +74,7 @@ public extension AnyLogger {
     ///                  When passing `String` it will be used directly, otherwise `tag` will be represented as type
     ///                  of passed object.
     /// - Returns partially applied function expecting `message` to be logged.
-    func error(tag: Any,
+    func error(tag: Any?,
                functionName: String = #function,
                fileName: String = #file,
                lineNumber: Int = #line) -> (String?) -> Void {
@@ -89,7 +89,7 @@ public extension AnyLogger {
     ///                  When passing `String` it will be used directly, otherwise `tag` will be represented as type
     ///                  of passed object.
     /// - Returns partially applied function expecting `message` to be logged.
-    func severe(tag: Any,
+    func severe(tag: Any?,
                 functionName: String = #function,
                 fileName: String = #file,
                 lineNumber: Int = #line) -> (String?) -> Void {

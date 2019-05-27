@@ -1,12 +1,9 @@
+import Foundation
 public class Logger: AnyLogger {
 
-    private var writers: [AnyLogEntryWriter] = []
+    public var writers: [AnyLogEntryWriter] = []
 
     public var interceptors: [AnyLogInterceptor] = []
-
-    public func addWriter(_ writer: AnyLogEntryWriter) {
-        writers.append(writer)
-    }
 
     private func log(_ message: String?,
                      tag: String?,
@@ -55,17 +52,16 @@ public class Logger: AnyLogger {
     public func severe(_ message: String?, tag: Any?, functionName: String, fileName: String, lineNumber: Int) {
         log(message, tag: objectTag(tag), level: .severe, functionName: functionName, fileName: fileName, lineNumber: lineNumber)
     }
+}
 
-    private func objectTag(_ tag: Any?) -> String? {
-        guard let tag = tag else { return nil }
+func objectTag(_ tag: Any?) -> String? {
+    guard let tag = tag else { return nil }
 
-        if let tag = tag as? String {
-            return tag
-        } else if let typeTag = tag as? Any.Type {
-            return String(describing: typeTag)
-        } else {
-            return String(describing: type(of: tag))
-        }
+    if let tag = tag as? String {
+        return tag
+    } else if let typeTag = tag as? Any.Type {
+        return String(describing: typeTag)
+    } else {
+        return String(describing: type(of: tag))
     }
-
 }

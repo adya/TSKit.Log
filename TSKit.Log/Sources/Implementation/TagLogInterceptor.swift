@@ -2,8 +2,8 @@ public class TagLogInterceptor: AnyLogInterceptor {
 
     var ignoredTags: Set<String>
 
-    public init(ignoredTags: String...) {
-        self.ignoredTags = Set(ignoredTags)
+    public init(ignoredTags: Any?...) {
+        self.ignoredTags = Set(ignoredTags.compactMap(objectTag))
     }
 
     public func shouldLog(_ entry: LogEntry) -> Bool {
