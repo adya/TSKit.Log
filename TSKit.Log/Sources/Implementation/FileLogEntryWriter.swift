@@ -31,7 +31,7 @@ public class FileLogEntryWriter: AnyLogEntryWriter {
     }
 
     public func write(_ entry: LogEntry) {
-        if let message = decorator.decorate(entry).data(using: .utf8) {
+        if let message = (decorator.decorate(entry) ==> {"\n\($0)"}).data(using: .utf8) {
             fileHandle.write(message)
         } else {
             print("Failed to write entry \(entry).")
