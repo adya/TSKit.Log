@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		006182BD206045C90079DD8C /* TSKit_Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 006182BC206045C90079DD8C /* TSKit_Core.framework */; };
+		00BD256622CF8E58007589F2 /* AnyLogger+Default.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BD256522CF8E58007589F2 /* AnyLogger+Default.swift */; };
+		00BD256722CF90E0007589F2 /* TSKit_Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 006182BC206045C90079DD8C /* TSKit_Core.framework */; };
+		00BD256922CF90EB007589F2 /* TSKit_Core.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 006182BC206045C90079DD8C /* TSKit_Core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		00C2C4551FE5C43C00721731 /* TSKit_Log.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C2C44B1FE5C43C00721731 /* TSKit_Log.framework */; };
 		00C2C45A1FE5C43C00721731 /* TSKit_LogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C2C4591FE5C43C00721731 /* TSKit_LogTests.swift */; };
 		00C2C45C1FE5C43C00721731 /* TSKit_Log.h in Headers */ = {isa = PBXBuildFile; fileRef = 00C2C44E1FE5C43C00721731 /* TSKit_Log.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -37,9 +40,23 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		00BD256822CF90E4007589F2 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				00BD256922CF90EB007589F2 /* TSKit_Core.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		006182BC206045C90079DD8C /* TSKit_Core.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TSKit_Core.framework; path = Carthage/Build/iOS/TSKit_Core.framework; sourceTree = "<group>"; };
 		006182BF206045DE0079DD8C /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = SOURCE_ROOT; };
+		00BD256522CF8E58007589F2 /* AnyLogger+Default.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AnyLogger+Default.swift"; sourceTree = "<group>"; };
 		00C2C44B1FE5C43C00721731 /* TSKit_Log.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TSKit_Log.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		00C2C44E1FE5C43C00721731 /* TSKit_Log.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TSKit_Log.h; sourceTree = "<group>"; };
 		00C2C44F1FE5C43C00721731 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -76,6 +93,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				00C2C4551FE5C43C00721731 /* TSKit_Log.framework in Frameworks */,
+				00BD256722CF90E0007589F2 /* TSKit_Core.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -134,6 +152,7 @@
 				2D9E6906778252919803F9F8 /* AnyLogEntryWriter.swift */,
 				2D9E61B4FDD965F7FCA4A251 /* AnyLogger+Currying.swift */,
 				2D9E65DAD2B1D4CA35D4E13C /* AnyLogger+Tagless.swift */,
+				00BD256522CF8E58007589F2 /* AnyLogger+Default.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -197,6 +216,7 @@
 				00C2C4501FE5C43C00721731 /* Sources */,
 				00C2C4511FE5C43C00721731 /* Frameworks */,
 				00C2C4521FE5C43C00721731 /* Resources */,
+				00BD256822CF90E4007589F2 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -272,6 +292,7 @@
 				00C2C4EC1FE5C52E00721731 /* AnyLogger.swift in Sources */,
 				2D9E6DCADFF68622E62ED846 /* LogLevel.swift in Sources */,
 				2D9E62A2C53584D000748DA9 /* AnyLogEntryDecorator.swift in Sources */,
+				00BD256622CF8E58007589F2 /* AnyLogger+Default.swift in Sources */,
 				2D9E62B6A1261406D41BC91E /* LogEntry.swift in Sources */,
 				2D9E6B7BC873A8DA3AE786F4 /* DefaultLogEntryDecorator.swift in Sources */,
 				2D9E6B54B1924CD5F961792A /* AnyLogIntercepter.swift in Sources */,
@@ -473,6 +494,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P2NBF8K2F9;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = TSKit.LogTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.glar.TSKit-LogTests";
@@ -488,6 +513,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P2NBF8K2F9;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = TSKit.LogTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.glar.TSKit-LogTests";

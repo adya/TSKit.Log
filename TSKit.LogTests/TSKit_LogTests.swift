@@ -11,26 +11,60 @@ import XCTest
 
 class TSKit_LogTests: XCTestCase {
     
+    let writer = StringLogEntryWriter()
+    
+    let logger = Logger()
+    
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        logger.writers.append(writer)
     }
     
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        logger.writers.removeAll()
+        writer.output = ""
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testTagless() {
+        logger.debug("test", tag: nil)
+        XCTAssert(writer.output == "test\n")
     }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    func testSingleStringTag() {
+        logger.debug("test", tag: "TG")
+        XCTAssert(writer.output == "[TG] test\n")
+    }
+    
+    func testSingleObjectTag() {
+        logger.debug("test", tag: writer)
+        XCTAssert(writer.output == "[StringLogEntryWriter] test\n")
+    }
+    
+    func testMultipleStringTags() {
+//        logger.debug("test", tag: "TG1", "TG2", "TG3")
+//        XCTAssert(writer.output == "[TG1][TG2][TG3] test\n")
+    }
+
+    class RawDecorator: DefaultLogEntryDecorator {
+        
+        override func decorate(_ entry: LogEntry) -> String {
+            let tag = entry.tag.flatMap { "[\($0)] " } ?? ""
+            return "\(tag)\(entry.message)"
         }
     }
     
+    class StringLogEntryWriter: AnyLogEntryWriter {
+        
+        var interceptors: [AnyLogInterceptor] = []
+        
+        var decorator: AnyLogEntryDecorator = RawDecorator()
+        
+        var output = ""
+        
+        func write(_ logEntry: LogEntry) {
+            
+            output += "\(decorator.decorate(logEntry))\n"
+        }
+    }
 }

@@ -4,7 +4,7 @@ public struct LogEntry {
 
     public let timestamp: Date
 
-    public let tag: String?
+    public let tags: [String]
 
     public let level: LogLevel
 
