@@ -56,6 +56,19 @@ class TSKit_LogTests: XCTestCase {
         logger.debug("test", tag: tagNil, tagOptional, tagValue, typeNil, typeOptional, typeValue)
         XCTAssert(writer.output == "[TG1][TG3][StringLogEntryWriter][StringLogEntryWriter] test\n")
     }
+    
+    func testConvertibleEnumTag() {
+        logger.debug("test", tag: ConvertibleTag.string)
+        XCTAssert(writer.output == "[converted] test\n")
+    }
+    
+    enum ConvertibleTag: CustomStringConvertible {
+        case string
+        
+        var description: String {
+            return "converted"
+        }
+    }
 
     class RawDecorator: DefaultLogEntryDecorator {
         

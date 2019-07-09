@@ -22,7 +22,7 @@ public class DefaultLogEntryDecorator: AnyLogEntryDecorator {
         switch style {
         case .iconic: return level.icon
         case .textual: return level.text
-        case .mixed: return "\(level.icon) \(level.text)"
+        case .mixed: return level.verbose
         }
     }
     
@@ -38,7 +38,7 @@ public enum LogLevelStyle {
 public extension LogLevel  {
 
     var verbose: String {
-        return "\(icon)️ \(String(describing: self).uppercased())"
+        return "\(icon)️ \(text)"
     }
 
     var icon: String {
