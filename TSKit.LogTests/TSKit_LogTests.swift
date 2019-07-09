@@ -1,11 +1,3 @@
-//
-//  TSKit_LogTests.swift
-//  TSKit.LogTests
-//
-//  Created by Arkadiy Glushchevsky on 12/16/17.
-//  Copyright © 2017 Arkadiy Glushchevsky. All rights reserved.
-//
-
 import XCTest
 @testable import TSKit_Log
 
@@ -13,14 +5,17 @@ class TSKit_LogTests: XCTestCase {
     
     let writer = StringLogEntryWriter()
     
-    let logger = Logger()
+    let logger: AnyLogger = Logger()
     
     override func setUp() {
         super.setUp()
+        let logger = self.logger as! Logger
+        logger.writers.append(PrintLogEntryWriter())
         logger.writers.append(writer)
     }
     
     override func tearDown() {
+        let logger = self.logger as! Logger
         logger.writers.removeAll()
         writer.output = ""
         super.tearDown()
@@ -42,15 +37,32 @@ class TSKit_LogTests: XCTestCase {
     }
     
     func testMultipleStringTags() {
-//        logger.debug("test", tag: "TG1", "TG2", "TG3")
-//        XCTAssert(writer.output == "[TG1][TG2][TG3] test\n")
+        logger.debug("test", tag: "TG1", "TG2", "TG3")
+        XCTAssert(writer.output == "[TG1][TG2][TG3] test\n")
+    }
+    
+    func testMultipleMixedTags() {
+        logger.debug("test", tag: "TG1", writer, "TG3")
+        XCTAssert(writer.output == "[TG1][StringLogEntryWriter][TG3] test\n")
+    }
+    
+    func testMultipleOptionalTags() {
+        let tagNil: String? = nil
+        let tagOptional: String? = "TG1"
+        let tagValue = "TG3"
+        let typeNil: StringLogEntryWriter.Type? = nil
+        let typeOptional: StringLogEntryWriter.Type? = StringLogEntryWriter.self
+        let typeValue = StringLogEntryWriter.self
+        logger.debug("test", tag: tagNil, tagOptional, tagValue, typeNil, typeOptional, typeValue)
+        XCTAssert(writer.output == "[TG1][TG3][StringLogEntryWriter][StringLogEntryWriter] test\n")
     }
 
     class RawDecorator: DefaultLogEntryDecorator {
         
         override func decorate(_ entry: LogEntry) -> String {
-            let tag = entry.tag.flatMap { "[\($0)] " } ?? ""
-            return "\(tag)\(entry.message)"
+            let tag = entry.tags.map { "[\($0)]" }.joined(separator: "")
+            let tagFormatted = tag.isEmpty ? "" : "\(tag) "
+            return "\(tagFormatted)\(entry.message)"
         }
     }
     

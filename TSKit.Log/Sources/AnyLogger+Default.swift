@@ -14,7 +14,7 @@ public extension AnyLogger {
     ///                  When passing `String` it will be used directly, otherwise `tag` will be represented as type
     ///                  of passed object.
     func debug(_ message: String?,
-               tag: Any?,
+               tag: Any?...,
                functionName: String = #function,
                fileName: String = #file,
                lineNumber: Int = #line) {
@@ -30,7 +30,7 @@ public extension AnyLogger {
     ///                  When passing `String` it will be used directly, otherwise `tag` will be represented as type
     ///                  of passed object.
     func verbose(_ message: String?,
-                 tag: Any?,
+                 tag: Any?...,
                  functionName: String = #function,
                  fileName: String = #file,
                  lineNumber: Int = #line) {
@@ -45,7 +45,11 @@ public extension AnyLogger {
     /// - Parameter tag: Optional object used to categorize current log message to certain group.
     ///                  When passing `String` it will be used directly, otherwise `tag` will be represented as type
     ///                  of passed object.
-    func info(_ message: String?, tag: Any?, functionName: String = #function, fileName: String = #file, lineNumber: Int = #line) {
+    func info(_ message: String?,
+              tag: Any?...,
+        functionName: String = #function,
+        fileName: String = #file,
+        lineNumber: Int = #line) {
         self.info(message, tag: tag, functionName: functionName, fileName: fileName, lineNumber: lineNumber)
     }
     
@@ -59,7 +63,7 @@ public extension AnyLogger {
     ///                  When passing `String` it will be used directly, otherwise `tag` will be represented as type
     ///                  of passed object.
     func warning(_ message: String?,
-                 tag: Any?,
+                 tag: Any?...,
                  functionName: String = #function,
                  fileName: String = #file,
                  lineNumber: Int = #line) {
@@ -75,7 +79,7 @@ public extension AnyLogger {
     ///                  When passing `String` it will be used directly, otherwise `tag` will be represented as type
     ///                  of passed object.
     func error(_ message: String?,
-               tag: Any?,
+               tag: Any?...,
                functionName: String = #function,
                fileName: String = #file,
                lineNumber: Int = #line) {
@@ -91,7 +95,7 @@ public extension AnyLogger {
     ///                  When passing `String` it will be used directly, otherwise `tag` will be represented as type
     ///                  of passed object.
     func severe(_ message: String?,
-                tag: Any?,
+                tag: Any?...,
                 functionName: String = #function,
                 fileName: String = #file,
                 lineNumber: Int = #line) {

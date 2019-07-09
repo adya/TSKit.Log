@@ -29,28 +29,52 @@ public class Logger: AnyLogger {
 
     public init() {}
 
-    public func debug(_ message: String?, tag: Any?..., functionName: String, fileName: String, lineNumber: Int) {
-        log(message, tag: tag.flatMap(objectTag), level: .debug, functionName: functionName, fileName: fileName, lineNumber: lineNumber)
+    public func debug(_ message: String?,
+                      tag: [Any?],
+                      functionName: String = #function,
+                      fileName: String = #file,
+                      lineNumber: Int = #line) {
+        log(message, tag: tag.compactMap(objectTag), level: .debug, functionName: functionName, fileName: fileName, lineNumber: lineNumber)
     }
 
-    public func verbose(_ message: String?, tag: Any?..., functionName: String, fileName: String, lineNumber: Int) {
-        log(message, tag: tag.flatMap(objectTag), level: .verbose, functionName: functionName, fileName: fileName, lineNumber: lineNumber)
+    public func verbose(_ message: String?,
+                        tag: [Any?],
+                        functionName: String = #function,
+                        fileName: String = #file,
+                        lineNumber: Int = #line) {
+        log(message, tag: tag.compactMap(objectTag), level: .verbose, functionName: functionName, fileName: fileName, lineNumber: lineNumber)
     }
 
-    public func info(_ message: String?, tag: Any?..., functionName: String, fileName: String, lineNumber: Int) {
-        log(message, tag: tag.flatMap(objectTag), level: .info, functionName: functionName, fileName: fileName, lineNumber: lineNumber)
+    public func info(_ message: String?,
+                     tag: [Any?],
+                     functionName: String = #function,
+                     fileName: String = #file,
+                     lineNumber: Int = #line) {
+        log(message, tag: tag.compactMap(objectTag), level: .info, functionName: functionName, fileName: fileName, lineNumber: lineNumber)
     }
 
-    public func warning(_ message: String?, tag: Any?..., functionName: String, fileName: String, lineNumber: Int) {
-        log(message, tag: tag.flatMap(objectTag), level: .warning, functionName: functionName, fileName: fileName, lineNumber: lineNumber)
+    public func warning(_ message: String?,
+                        tag: [Any?],
+                        functionName: String = #function,
+                        fileName: String = #file,
+                        lineNumber: Int = #line) {
+        log(message, tag: tag.compactMap(objectTag), level: .warning, functionName: functionName, fileName: fileName, lineNumber: lineNumber)
     }
 
-    public func error(_ message: String?, tag: Any?..., functionName: String, fileName: String, lineNumber: Int) {
-        log(message, tag: tag.flatMap(objectTag), level: .error, functionName: functionName, fileName: fileName, lineNumber: lineNumber)
+    public func error(_ message: String?,
+                      tag: [Any?],
+                      functionName: String = #function,
+                      fileName: String = #file,
+                      lineNumber: Int = #line) {
+        log(message, tag: tag.compactMap(objectTag), level: .error, functionName: functionName, fileName: fileName, lineNumber: lineNumber)
     }
 
-    public func severe(_ message: String?, tag: Any?..., functionName: String, fileName: String, lineNumber: Int) {
-        log(message, tag: tag.flatMap(objectTag), level: .severe, functionName: functionName, fileName: fileName, lineNumber: lineNumber)
+    public func severe(_ message: String?,
+                       tag: [Any?],
+                       functionName: String = #function,
+                       fileName: String = #file,
+                       lineNumber: Int = #line) {
+        log(message, tag: tag.compactMap(objectTag), level: .severe, functionName: functionName, fileName: fileName, lineNumber: lineNumber)
     }
 }
 

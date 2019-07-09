@@ -9,11 +9,11 @@ public extension AnyLogger {
     /// `Debug` messages are used to log any details required
     /// to determine possible causes of known issues while debugging application.
     /// - Attention: Do not pass any parameters except `message`.
-    /// - Parameter tag: Optional object used to categorize current log message to certain group.
+    /// - Parameter tags: Optional objects used to categorize current log message to certain groups.
     ///                  When passing `String` it will be used directly, otherwise `tag` will be represented as type
     ///                  of passed object.
     /// - Returns partially applied function expecting `message` to be logged.
-    func debug(tag: Any?,
+    func debug(tag: Any?...,
                functionName: String = #function,
                fileName: String = #file,
                lineNumber: Int = #line) -> (String?) -> Void {
@@ -24,11 +24,11 @@ public extension AnyLogger {
     /// `Verbose` messages are typically used to describe
     /// operation's non-primary details while it's running.
     /// - Attention: Do not pass any parameters except `message`.
-    /// - Parameter tag: Optional object used to categorize current log message to certain group.
+    /// - Parameter tags: Optional objects used to categorize current log message to certain groups.
     ///                  When passing `String` it will be used directly, otherwise `tag` will be represented as type
     ///                  of passed object.
     /// - Returns partially applied function expecting `message` to be logged.
-    func verbose(tag: Any?,
+    func verbose(tag: Any?...,
                  functionName: String = #function,
                  fileName: String = #file,
                  lineNumber: Int = #line) -> (String?) -> Void {
@@ -39,11 +39,11 @@ public extension AnyLogger {
     /// `Info` messages are used to provide some useful information
     /// about any operation results, completion.
     /// - Attention: Do not pass any parameters except `message`.
-    /// - Parameter tag: Optional object used to categorize current log message to certain group.
+    /// - Parameter tags: Optional objects used to categorize current log message to certain groups.
     ///                  When passing `String` it will be used directly, otherwise `tag` will be represented as type
     ///                  of passed object.
     /// - Returns partially applied function expecting `message` to be logged.
-    func info(tag: Any?,
+    func info(tag: Any?...,
               functionName: String = #function,
               fileName: String = #file,
               lineNumber: Int = #line) -> (String?) -> Void {
@@ -55,11 +55,11 @@ public extension AnyLogger {
     /// which doesn't stop/block any operations but still needs attention.
     /// - Note: `warning` can be used to mark some unfinished functionality.
     /// - Attention: Do not pass any parameters except `message`.
-    /// - Parameter tag: Optional object used to categorize current log message to certain group.
+    /// - Parameter tags: Optional objects used to categorize current log message to certain groups.
     ///                  When passing `String` it will be used directly, otherwise `tag` will be represented as type
     ///                  of passed object.
     /// - Returns partially applied function expecting `message` to be logged.
-    func warning(tag: Any?,
+    func warning(tag: Any?...,
                  functionName: String = #function,
                  fileName: String = #file,
                  lineNumber: Int = #line) -> (String?) -> Void {
@@ -70,11 +70,11 @@ public extension AnyLogger {
     /// `Error` message indicates that some expected and handled error occurred
     /// which leads in cancellation of the operation where this error occurred.
     /// - Attention: Do not pass any parameters except `message`.
-    /// - Parameter tag: Optional object used to categorize current log message to certain group.
+    /// - Parameter tags: Optional objects used to categorize current log message to certain groups.
     ///                  When passing `String` it will be used directly, otherwise `tag` will be represented as type
     ///                  of passed object.
     /// - Returns partially applied function expecting `message` to be logged.
-    func error(tag: Any?,
+    func error(tag: Any?...,
                functionName: String = #function,
                fileName: String = #file,
                lineNumber: Int = #line) -> (String?) -> Void {
@@ -85,11 +85,11 @@ public extension AnyLogger {
     /// `Severe` message indicates that some critical error occurred
     /// which leads to undefined behavior and/or crash.
     /// - Attention: Do not pass any parameters except `message`.
-    /// - Parameter tag: Optional object used to categorize current log message to certain group.
+    /// - Parameter tags: Optional objects used to categorize current log message to certain groups.
     ///                  When passing `String` it will be used directly, otherwise `tag` will be represented as type
     ///                  of passed object.
     /// - Returns partially applied function expecting `message` to be logged.
-    func severe(tag: Any?,
+    func severe(tag: Any?...,
                 functionName: String = #function,
                 fileName: String = #file,
                 lineNumber: Int = #line) -> (String?) -> Void {

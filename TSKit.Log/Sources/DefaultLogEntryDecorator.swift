@@ -8,7 +8,7 @@ public class DefaultLogEntryDecorator: AnyLogEntryDecorator {
 
     public func decorate(_ entry: LogEntry) -> String {
         let date = String(from: entry.timestamp, formattedWith: "HH:mm:ss.SSS")!
-        let tag = entry.tag.flatMap { "[\($0)]" }
+        let tag = entry.tags.map { "[\($0)]" }.joined(separator: "")
         let logLevel = self.logLevel(entry.level, with: style)
         let prefix = ["[\(date)]",
                       "\(logLevel)",

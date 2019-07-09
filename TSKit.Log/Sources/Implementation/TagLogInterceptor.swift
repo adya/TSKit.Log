@@ -7,6 +7,6 @@ public class TagLogInterceptor: AnyLogInterceptor {
     }
 
     public func shouldLog(_ entry: LogEntry) -> Bool {
-        return entry.tag.flatMap({ !ignoredTags.contains($0) }) ?? true
+        return ignoredTags.intersection(entry.tags).isEmpty
     }
 }
