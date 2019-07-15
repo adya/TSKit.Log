@@ -6,7 +6,7 @@ public class PrintLogEntryWriter: AnyLogEntryWriter {
 
     public var decorator: AnyLogEntryDecorator
 
-    public init(decorator: AnyLogEntryDecorator = DefaultLogEntryDecorator(),
+    public init(decorator: AnyLogEntryDecorator = LogEntryDecorator(),
                 interceptors: AnyLogInterceptor...) {
         self.decorator = decorator
         self.interceptors = interceptors

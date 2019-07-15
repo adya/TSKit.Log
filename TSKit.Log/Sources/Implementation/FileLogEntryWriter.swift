@@ -11,7 +11,7 @@ public class FileLogEntryWriter: AnyLogEntryWriter {
     private let fileHandle: FileHandle
 
     public init?(logFile: URL,
-                 decorator: AnyLogEntryDecorator = DefaultLogEntryDecorator(),
+                 decorator: AnyLogEntryDecorator = LogEntryDecorator(),
                  interceptors: AnyLogInterceptor...) {
         self.logFile = logFile
         self.decorator = decorator

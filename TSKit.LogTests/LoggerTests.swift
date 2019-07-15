@@ -1,7 +1,7 @@
 import XCTest
 @testable import TSKit_Log
 
-class TSKit_LogTests: XCTestCase {
+class LoggerTests: XCTestCase {
     
     let writer = StringLogEntryWriter()
     
@@ -70,7 +70,7 @@ class TSKit_LogTests: XCTestCase {
         }
     }
 
-    class RawDecorator: DefaultLogEntryDecorator {
+    class RawDecorator: LogEntryDecorator {
         
         override func decorate(_ entry: LogEntry) -> String {
             let tag = entry.tags.map { "[\($0)]" }.joined(separator: "")
