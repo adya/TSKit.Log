@@ -1,7 +1,20 @@
 import Foundation
 public class Logger: AnyLogger {
 
-    public var writers: [AnyLogEntryWriter] = []
+    private var syncrhonizedWriters: [AnyLogEntryWriter] = []
+    
+    private let queue = DispatchQueue(label: "synchronizer", qos: .default, attributes: .concurrent)
+    
+    public var writers: [AnyLogEntryWriter] {
+        get {
+            queue.sync { syncrhonizedWriters }
+        }
+        set {
+            queue.async(flags: .barrier) {
+                self.syncrhonizedWriters = newValue
+            }
+        }
+    }
 
     public var interceptors: [AnyLogInterceptor] = []
 
