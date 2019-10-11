@@ -1,7 +1,8 @@
-/// - Since: 01/20/2018
-/// - Author: Arkadii Hlushchevskyi
-/// - Copyright: © 2018. Arkadii Hlushchevskyi.
-/// - Seealso: https://github.com/adya/TSKit.Log/blob/master/LICENSE.md
+// - Since: 01/20/2018
+// - Author: Arkadii Hlushchevskyi
+// - Copyright: © 2019. Arkadii Hlushchevskyi.
+// - Seealso: https://github.com/adya/TSKit.Log/blob/master/LICENSE.md
+
 
 /// A level of logging.
 public enum LogLevel: Int {

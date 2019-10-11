@@ -1,4 +1,10 @@
+// - Since: 01/20/2018
+// - Author: Arkadii Hlushchevskyi
+// - Copyright: © 2019. Arkadii Hlushchevskyi.
+// - Seealso: https://github.com/adya/TSKit.Log/blob/master/LICENSE.md
+
 import Foundation
+
 public class Logger: AnyLogger {
 
     private var syncrhonizedWriters: [AnyLogEntryWriter] = []
