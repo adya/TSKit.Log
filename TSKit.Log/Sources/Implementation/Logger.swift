@@ -104,8 +104,6 @@ func objectTag(_ tag: Any?) -> String? {
         return tag
     } else if let typeTag = tag as? Any.Type {
         return String(describing: typeTag)
-    } else if let tag = tag as? CustomStringConvertible {
-        return tag.description
     } else {
         return String(describing: type(of: tag))
     }
