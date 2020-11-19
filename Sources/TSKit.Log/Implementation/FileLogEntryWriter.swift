@@ -3,6 +3,7 @@
 // - Copyright: © 2020. Arkadii Hlushchevskyi.
 // - Seealso: https://github.com/adya/TSKit.Log/blob/master/LICENSE.md
 
+import Foundation
 import TSKit_Core
 
 public class FileLogEntryWriter: AnyLogEntryWriter {
