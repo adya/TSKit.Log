@@ -46,7 +46,7 @@ public class Logger: AnyLogger {
                .forEach { $0.write(entry) }
     }
 
-    public init() {}
+    public init(interceptors: [AnyLogInterceptor] = []) {}
 
     public func debug(_ message: String?,
                       tag: [Any?],
