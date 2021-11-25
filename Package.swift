@@ -11,7 +11,7 @@ let package = Package(
             targets: ["TSKit.Log"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/adya/TSKit.Core.git", .upToNextMajor(from: "2.3.0"))
+        .package(url: "https://github.com/adya/TSKit.Core.git", .upToNextMajor(from: "2.6.0"))
     ],
     targets: [
         .target(
